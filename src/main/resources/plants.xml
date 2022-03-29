@@ -1,0 +1,179 @@
+﻿<?xml version='1.0' encoding="UTF-8"?>
+
+<flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="plants.xsd">
+
+
+  <flower id="_1">
+
+    <name>Хризантема кустовая Зембла белая</name>
+
+    <soil>Подзолистая</soil>
+
+    <origin>
+      <country>Нидерланды</country>
+      <importDate>2022-03-29</importDate>
+    </origin>
+
+    <extendedVisualParameters>
+      <stemColor>Темно-зеленый</stemColor>
+      <leafColor>Темно-зеленый</leafColor>
+      <averageSize>50</averageSize>
+      <budColor>Белый</budColor>
+    </extendedVisualParameters>
+
+    <growingTips>
+      <temperature>17</temperature>
+      <lighting photophilous="Да"/>
+      <watering>500</watering>
+    </growingTips>
+
+    <multiplying>Черенки Семена</multiplying>
+
+  </flower>
+
+  <flower id="_2">
+    <name>Тюльпан Barcelona</name>
+    <soil>Грунтовая</soil>
+    <origin>
+      <country>Литва</country>
+      <importDate>2022-03-30</importDate>
+    </origin>
+    <extendedVisualParameters>
+      <stemColor>Фисташковый</stemColor>
+      <leafColor>Темный пастельно-зеленый</leafColor>
+      <averageSize>25</averageSize>
+      <budColor>Желто-красный</budColor>
+    </extendedVisualParameters>
+    <growingTips>
+      <temperature>18</temperature>
+      <lighting photophilous="Да"/>
+      <watering>210</watering>
+    </growingTips>
+    <multiplying>Семена</multiplying>
+  </flower>
+
+  <flower id="_3">
+    <name>Орхидея Фаленопсис белая</name>
+    <soil>Дерново-подзолистая</soil>
+    <origin>
+      <country>Турция</country>
+      <importDate>2022-03-20</importDate>
+    </origin>
+    <extendedVisualParameters>
+      <stemColor>Серо-зеленый</stemColor>
+      <leafColor>Красного моря</leafColor>
+      <averageSize>35</averageSize>
+      <budColor>Белый</budColor>
+    </extendedVisualParameters>
+    <growingTips>
+      <temperature>21</temperature>
+      <lighting photophilous="Нет"/>
+      <watering>200</watering>
+    </growingTips>
+    <multiplying>Черенки Семена</multiplying>
+  </flower>
+
+  <flower id="_4">
+    <name>Гвоздика Red Soho</name>
+    <soil>Грунтовая</soil>
+    <origin>
+      <country>Нидерланды</country>
+      <importDate>2022-03-29</importDate>
+    </origin>
+    <extendedVisualParameters>
+      <stemColor>Зеленый</stemColor>
+      <leafColor>Зеленый</leafColor>
+      <averageSize>45</averageSize>
+      <budColor>Ярко красный</budColor>
+    </extendedVisualParameters>
+    <growingTips>
+      <temperature>15</temperature>
+      <lighting photophilous="Да"/>
+      <watering>190</watering>
+    </growingTips>
+    <multiplying>Черенки</multiplying>
+  </flower>
+
+  <flower id="_5">
+    <name>Фиалка Прекрасная креолка</name>
+    <soil>Грунтовая</soil>
+    <origin>
+      <country>Беларусь</country>
+      <importDate>2022-02-01</importDate>
+    </origin>
+    <extendedVisualParameters>
+      <stemColor>Зеленый</stemColor>
+      <leafColor>Темно-зеленый</leafColor>
+      <averageSize>10</averageSize>
+      <budColor>Темно-синий</budColor>
+    </extendedVisualParameters>
+    <growingTips>
+      <temperature>24</temperature>
+      <lighting photophilous="Да"/>
+      <watering>100</watering>
+    </growingTips>
+    <multiplying>Листья Семена</multiplying>
+  </flower>
+
+  <flower id="_6">
+    <name>Карликовый фикус пумила</name>
+    <soil>Подзолистая</soil>
+    <origin>
+      <country>Китай</country>
+      <importDate>2022-01-19</importDate>
+    </origin>
+    <visualParameters>
+      <stemColor>Болотный</stemColor>
+      <leafColor>Зеленый с белой оконтовкой</leafColor>
+      <averageSize>17</averageSize>
+    </visualParameters>
+    <growingTips>
+      <temperature>19</temperature>
+      <lighting photophilous="Да"/>
+      <watering>510</watering>
+    </growingTips>
+    <multiplying>Черенки</multiplying>
+  </flower>
+
+  <flower id="_7">
+    <name>Эхинокактус</name>
+    <soil>Дерново-подзолистая</soil>
+    <origin>
+      <country>США</country>
+      <importDate>2021-12-09</importDate>
+    </origin>
+    <visualParameters>
+      <stemColor>Светло-зеленый</stemColor>
+      <leafColor>Оранжевый</leafColor>
+      <averageSize>13</averageSize>
+    </visualParameters>
+    <growingTips>
+      <temperature>25</temperature>
+      <lighting photophilous="Да"/>
+      <watering>50</watering>
+    </growingTips>
+    <multiplying>Семена</multiplying>
+  </flower>
+
+  <flower id="_8">
+    <name>Алое пятнистое</name>
+    <soil>Грунтовая</soil>
+    <origin>
+      <country>Литва</country>
+      <importDate>2022-03-22</importDate>
+    </origin>
+    <visualParameters>
+      <stemColor>Зеленый</stemColor>
+      <leafColor>Зеленый с белыми пятнами</leafColor>
+      <averageSize>30</averageSize>
+    </visualParameters>
+    <growingTips>
+      <temperature>18</temperature>
+      <lighting photophilous="Да"/>
+      <watering>210</watering>
+    </growingTips>
+    <multiplying>Черенки</multiplying>
+  </flower>
+
+</flowers>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="flowers">
+    <xsd:complexType>
+      <xsd:sequence>
+
+        <xsd:element name="flower" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+
+              <xsd:element name="name">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="([A-Za-zА-Яа-я0-9]+[ -]?)+"/>
+                    <xsd:minLength value="2"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="soil">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Грунтовая"/>
+                    <xsd:enumeration value="Подзолистая"/>
+                    <xsd:enumeration value="Дерново-подзолистая"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+              <xsd:element name="origin">
+                <xsd:complexType>
+                  <xsd:sequence>
+
+                    <xsd:element name="country">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:pattern value="([A-Za-zА-Яа-я]+[ -]?)+"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+
+                    <xsd:element name="importDate" type="xsd:date"/>
+
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+
+              <xsd:choice>
+                <!-- Растение без цветов -->
+                <xsd:element name="visualParameters" type="visualParamsType"/>
+
+                <!-- Растение с цветами -->
+                <xsd:element name="extendedVisualParameters">
+                  <xsd:complexType>
+                    <xsd:complexContent>
+                      <xsd:extension base="visualParamsType">
+                        <xsd:sequence>
+                          <xsd:element name="budColor" type="xsd:string"/>
+                        </xsd:sequence>
+                      </xsd:extension>
+                    </xsd:complexContent>
+                  </xsd:complexType>
+                </xsd:element>
+
+              </xsd:choice>
+
+              <xsd:element name="growingTips">
+                <xsd:complexType>
+                  <xsd:sequence>
+
+                    <xsd:element name="temperature">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="0"/>
+                          <xsd:maxInclusive value="30"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+
+                    <xsd:element name="lighting">
+                      <xsd:complexType>
+                        <xsd:attribute name="photophilous" use="optional" default="-">
+                          <xsd:simpleType>
+                            <xsd:restriction>
+                              <xsd:pattern value="Да|Нет|-"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+
+                    <xsd:element name="watering">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:maxInclusive value="1000"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+
+              <xsd:element name="multiplying">
+                <xsd:simpleType>
+                  <xsd:restriction>
+                    <xsd:simpleType>
+                      <xsd:list itemType="multiplyingType"/>
+                    </xsd:simpleType>
+                    <xsd:maxLength value="3"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:ID" use="required"/>
+          </xsd:complexType>
+        </xsd:element>
+
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="multiplyingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="Семена|Черенки|Листья"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="visualParamsType">
+    <xsd:sequence>
+      <xsd:element name="stemColor" type="xsd:string"/>
+      <xsd:element name="leafColor" type="xsd:string"/>
+
+      <xsd:element name="averageSize">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="5"/>
+            <xsd:maxInclusive value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

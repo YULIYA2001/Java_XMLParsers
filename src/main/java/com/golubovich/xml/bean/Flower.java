@@ -101,15 +101,15 @@ public class Flower {
     for (Multiplying _mlt: multiplying)
       _multiplying.add(_mlt.getName());
 
-    return "Flower{\n" +
+    return "Flower{ " +
         "id=" + id +
-        "\nname='" + name + '\'' +
-        "\nsoil=" + soil.getName() +
-        "\ncountry='" + country + '\'' +
-        "\nimportDate=" + importDate +
-        "\nvisualParameters=" + visualParameters +
-        "\ngrowingTips=" + growingTips +
-        "\nmultiplying=" + _multiplying +
-        "\n}";
+        ", name='" + name + '\'' +
+        ", soil=" + soil.getName() +
+        ", country='" + country + '\'' +
+        ", importDate=" + importDate +
+        ", visualParameters=" + visualParameters +
+        ", growingTips=" + growingTips +
+        ", multiplying=" + _multiplying +
+        " }";
   }
 }

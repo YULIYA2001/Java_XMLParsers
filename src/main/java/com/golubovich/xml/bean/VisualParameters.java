@@ -5,6 +5,8 @@ public class VisualParameters {
   private String leafColor;
   private int averageSize;
 
+  public VisualParameters() {}
+
   public VisualParameters(String stemColor, String leafColor, int averageSize) {
     this.stemColor = stemColor;
     this.leafColor = leafColor;

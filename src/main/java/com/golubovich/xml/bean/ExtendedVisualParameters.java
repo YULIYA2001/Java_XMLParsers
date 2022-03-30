@@ -4,6 +4,8 @@ public class ExtendedVisualParameters extends VisualParameters{
 
   private String budColor;
 
+  public ExtendedVisualParameters() {}
+
   public ExtendedVisualParameters(String stemColor, String leafColor, int averageSize,
       String budColor) {
     super(stemColor, leafColor, averageSize);

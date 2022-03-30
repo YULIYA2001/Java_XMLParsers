@@ -5,6 +5,8 @@ public class GrowingTips {
   private boolean photophilous;
   private int watering;
 
+  public GrowingTips() {}
+
   public GrowingTips(int temperature, boolean photophilous, int watering) {
     this.temperature = temperature;
     this.photophilous = photophilous;
@@ -21,6 +23,18 @@ public class GrowingTips {
 
   public int getWatering() {
     return watering;
+  }
+
+  public void setTemperature(int temperature) {
+    this.temperature = temperature;
+  }
+
+  public void setPhotophilous(boolean photophilous) {
+    this.photophilous = photophilous;
+  }
+
+  public void setWatering(int watering) {
+    this.watering = watering;
   }
 
   @Override

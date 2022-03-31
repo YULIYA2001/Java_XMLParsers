@@ -6,18 +6,18 @@ import com.golubovich.xml.bean.ExtendedVisualParameters;
 import com.golubovich.xml.bean.Flower;
 import com.golubovich.xml.bean.GrowingTips;
 import com.golubovich.xml.bean.VisualParameters;
-import com.golubovich.xml.bean.enums.Multiplying;
-import com.golubovich.xml.bean.enums.Soil;
+import com.golubovich.xml.parsers.ParseEnums;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class SaxParserHandler extends DefaultHandler {
+
+  private ParseEnums parseEnums;
 
   private String currentTagName;
 
@@ -38,8 +38,9 @@ public class SaxParserHandler extends DefaultHandler {
   }
 
   @Override
-  public void startDocument() throws SAXException {
+  public void startDocument() {
     flowersList = new ArrayList<>();
+    parseEnums = new ParseEnums();
   }
 
   @Override
@@ -122,10 +123,10 @@ public class SaxParserHandler extends DefaultHandler {
       switch (currentTagName) {
         case TAG_NAME -> flower.setName(new String(ch, start, length));
         case TAG_SOIL -> flower.setSoil(
-            parseSoil(new String(ch, start, length))
+            parseEnums.parseSoil(new String(ch, start, length))
         );
         case TAG_MULTIPLYING -> flower.setMultiplying(
-            parseMultiplying(new String(ch, start, length))
+            parseEnums.parseMultiplying(new String(ch, start, length))
         );
       }
 
@@ -169,32 +170,5 @@ public class SaxParserHandler extends DefaultHandler {
     ExtendedVisualParameters ev = (ExtendedVisualParameters) visualParams;
     ev.setBudColor(budColor);
     visualParams = ev;
-  }
-
-  private Soil parseSoil(String soil) {
-    for (Soil el : Soil.values()) {
-      if (el.getName().equals(soil)) {
-        return el;
-      }
-    }
-    return null;
-  }
-
-  private ArrayList<Multiplying> parseMultiplying(String multiplyingStr) {
-    ArrayList<String> mltStrList = new ArrayList(Arrays.asList(
-        (multiplyingStr).split("\\s")
-    ));
-
-    ArrayList<Multiplying> mltList = new ArrayList<>();
-
-    for (String mltEl : mltStrList) {
-      for (Multiplying el : Multiplying.values()) {
-        if (el.getName().equals(mltEl)) {
-          mltList.add(el);
-        }
-      }
-    }
-
-    return mltList;
   }
 }

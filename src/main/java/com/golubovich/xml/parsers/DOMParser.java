@@ -7,14 +7,11 @@ import com.golubovich.xml.bean.ExtendedVisualParameters;
 import com.golubovich.xml.bean.Flower;
 import com.golubovich.xml.bean.GrowingTips;
 import com.golubovich.xml.bean.VisualParameters;
-import com.golubovich.xml.bean.enums.Multiplying;
-import com.golubovich.xml.bean.enums.Soil;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,7 +22,11 @@ import org.xml.sax.SAXException;
 
 public class DOMParser {
 
+  private ParseEnums parseEnums;
+
   public List<Flower> parse() throws MyException {
+    parseEnums = new ParseEnums();
+
     Document doc;
     try {
       doc = buildDocument();
@@ -97,33 +98,24 @@ public class DOMParser {
           break;
 
         case TAG_SOIL:
-          String soil = flowerNode.item(j).getTextContent();
-          for (Soil el : Soil.values()) {
-            if (el.getName().equals(soil)) {
-              flower.setSoil(el);
-            }
-          }
+          flower.setSoil(
+              parseEnums.parseSoil(flowerNode.item(j).getTextContent())
+          );
           break;
 
         case TAG_MULTIPLYING:
-          ArrayList<String> mltStrList = new ArrayList(
-              Arrays.asList(flowerNode.item(j).getTextContent().split("\\s")));
-          ArrayList<Multiplying> mltList = new ArrayList<>();
-          for (String mltEl : mltStrList) {
-            for (Multiplying el : Multiplying.values()) {
-              if (el.getName().equals(mltEl)) {
-                mltList.add(el);
-              }
-            }
-          }
-          flower.setMultiplying(mltList);
+          flower.setMultiplying(
+              parseEnums.parseMultiplying(flowerNode.item(j).getTextContent())
+          );
           break;
 
         case TAG_ORIGIN:
           NodeList origin = flowerNode.item(j).getChildNodes();
-          DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
           flower.setCountry(origin.item(1).getTextContent());
-          flower.setImportDate(LocalDate.parse(origin.item(3).getTextContent(), formatter));
+          flower.setImportDate(LocalDate.parse(
+              origin.item(3).getTextContent(),
+              DateTimeFormatter.ofPattern("yyyy-MM-dd")
+          ));
           break;
 
         case TAG_VISUAL_PARAMS:
@@ -173,5 +165,4 @@ public class DOMParser {
         photophilous,
         Integer.parseInt(grTips.item(5).getTextContent()));
   }
-
 }

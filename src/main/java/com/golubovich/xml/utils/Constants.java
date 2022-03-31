@@ -18,6 +18,10 @@ public class Constants {
   public static final String TAG_LIGHTNING = "lighting";
   public static final String TAG_WATERING = "watering";
   public static final String TAG_MULTIPLYING = "multiplying";
+
+  public static final String ATTR_PHOTOPHILOUS = "photophilous";
+  public static final String ATTR_ID = "id";
+
   public static final String YES = "Да";
 
   public static final String FILE_PATH = "src/main/resources/plants.xml";

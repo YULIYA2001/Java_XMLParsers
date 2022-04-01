@@ -1,9 +1,9 @@
 package com.golubovich.xml.bean.enums;
 
 public enum Multiplying {
-  seed("Семена"),
-  leaf("Листья"),
-  petiole("Черенки");
+  SEED("Семена"),
+  LEAF("Листья"),
+  PETIOLE("Черенки");
 
   private final String name;
 

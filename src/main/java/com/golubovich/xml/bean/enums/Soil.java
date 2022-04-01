@@ -1,9 +1,9 @@
 package com.golubovich.xml.bean.enums;
 
-public enum Soil{
-  topsoil("Грунтовая"),
-  podzolicSoil("Подзолистая"),
-  sodPodzolicSoil("Дерново-подзолистая");
+public enum Soil {
+  TOPSOIL("Грунтовая"),
+  PODZOLIC_SOIL("Подзолистая"),
+  SOD_PODZOLIC_SOIL("Дерново-подзолистая");
 
   private final String name;
 

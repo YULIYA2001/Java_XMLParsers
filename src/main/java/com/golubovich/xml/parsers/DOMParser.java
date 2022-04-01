@@ -109,13 +109,22 @@ public class DOMParser {
           );
           break;
 
-        case TAG_ORIGIN:
-          NodeList origin = flowerNode.item(j).getChildNodes();
-          flower.setCountry(origin.item(1).getTextContent());
+//        case TAG_ORIGIN:
+//          NodeList origin = flowerNode.item(j).getChildNodes();
+//          flower.setCountry(origin.item(1).getTextContent());
+//          flower.setImportDate(LocalDate.parse(
+//              origin.item(3).getTextContent(),
+//              DateTimeFormatter.ofPattern("yyyy-MM-dd")
+//          ));
+//          break;
+        case TAG_COUNTRY:
+          flower.setCountry(flowerNode.item(j).getTextContent());
+          break;
+
+        case TAG_IMPORT_DATE:
           flower.setImportDate(LocalDate.parse(
-              origin.item(3).getTextContent(),
-              DateTimeFormatter.ofPattern("yyyy-MM-dd")
-          ));
+              flowerNode.item(j).getTextContent(),
+              DateTimeFormatter.ofPattern("yyyy-MM-dd")));
           break;
 
         case TAG_VISUAL_PARAMS:

@@ -10,10 +10,8 @@
 
     <soil>Подзолистая</soil>
 
-    <origin>
-      <country>Нидерланды</country>
-      <importDate>2022-03-29</importDate>
-    </origin>
+    <country>Нидерланды</country>
+    <importDate>2022-03-29</importDate>
 
     <extendedVisualParameters>
       <stemColor>Темно-зеленый</stemColor>
@@ -24,7 +22,7 @@
 
     <growingTips>
       <temperature>17</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>500</watering>
     </growingTips>
 
@@ -35,10 +33,8 @@
   <flower id="_2">
     <name>Тюльпан Barcelona</name>
     <soil>Грунтовая</soil>
-    <origin>
-      <country>Литва</country>
-      <importDate>2022-03-30</importDate>
-    </origin>
+    <country>Литва</country>
+    <importDate>2022-03-30</importDate>
     <extendedVisualParameters>
       <stemColor>Фисташковый</stemColor>
       <leafColor>Темный пастельно-зеленый</leafColor>
@@ -47,7 +43,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>18</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>210</watering>
     </growingTips>
     <multiplying>Семена</multiplying>
@@ -56,10 +52,8 @@
   <flower id="_3">
     <name>Орхидея Фаленопсис белая</name>
     <soil>Дерново-подзолистая</soil>
-    <origin>
-      <country>Турция</country>
-      <importDate>2022-03-20</importDate>
-    </origin>
+    <country>Турция</country>
+    <importDate>2022-03-20</importDate>
     <extendedVisualParameters>
       <stemColor>Серо-зеленый</stemColor>
       <leafColor>Красного моря</leafColor>
@@ -68,7 +62,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>21</temperature>
-      <lighting photophilous="Нет"/>
+      <lighting lighting="Нет"/>
       <watering>200</watering>
     </growingTips>
     <multiplying>Черенки Семена</multiplying>
@@ -77,10 +71,8 @@
   <flower id="_4">
     <name>Гвоздика Red Soho</name>
     <soil>Грунтовая</soil>
-    <origin>
-      <country>Нидерланды</country>
-      <importDate>2022-03-29</importDate>
-    </origin>
+    <country>Нидерланды</country>
+    <importDate>2022-03-29</importDate>
     <extendedVisualParameters>
       <stemColor>Зеленый</stemColor>
       <leafColor>Зеленый</leafColor>
@@ -89,7 +81,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>15</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>190</watering>
     </growingTips>
     <multiplying>Черенки</multiplying>
@@ -98,10 +90,8 @@
   <flower id="_5">
     <name>Фиалка Прекрасная креолка</name>
     <soil>Грунтовая</soil>
-    <origin>
-      <country>Беларусь</country>
-      <importDate>2022-02-01</importDate>
-    </origin>
+    <country>Беларусь</country>
+    <importDate>2022-02-01</importDate>
     <extendedVisualParameters>
       <stemColor>Зеленый</stemColor>
       <leafColor>Темно-зеленый</leafColor>
@@ -110,7 +100,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>24</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>100</watering>
     </growingTips>
     <multiplying>Листья Семена</multiplying>
@@ -119,10 +109,8 @@
   <flower id="_6">
     <name>Карликовый фикус пумила</name>
     <soil>Подзолистая</soil>
-    <origin>
-      <country>Китай</country>
-      <importDate>2022-01-19</importDate>
-    </origin>
+    <country>Китай</country>
+    <importDate>2022-01-19</importDate>
     <visualParameters>
       <stemColor>Болотный</stemColor>
       <leafColor>Зеленый с белой оконтовкой</leafColor>
@@ -130,7 +118,7 @@
     </visualParameters>
     <growingTips>
       <temperature>19</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>510</watering>
     </growingTips>
     <multiplying>Черенки</multiplying>
@@ -139,10 +127,8 @@
   <flower id="_7">
     <name>Эхинокактус</name>
     <soil>Дерново-подзолистая</soil>
-    <origin>
-      <country>США</country>
-      <importDate>2021-12-09</importDate>
-    </origin>
+    <country>США</country>
+    <importDate>2021-12-09</importDate>
     <visualParameters>
       <stemColor>Светло-зеленый</stemColor>
       <leafColor>Оранжевый</leafColor>
@@ -150,7 +136,7 @@
     </visualParameters>
     <growingTips>
       <temperature>25</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>50</watering>
     </growingTips>
     <multiplying>Семена</multiplying>
@@ -159,10 +145,8 @@
   <flower id="_8">
     <name>Алое пятнистое</name>
     <soil>Грунтовая</soil>
-    <origin>
-      <country>Литва</country>
-      <importDate>2022-03-22</importDate>
-    </origin>
+    <country>Литва</country>
+    <importDate>2022-03-22</importDate>
     <visualParameters>
       <stemColor>Зеленый</stemColor>
       <leafColor>Зеленый с белыми пятнами</leafColor>
@@ -170,7 +154,7 @@
     </visualParameters>
     <growingTips>
       <temperature>18</temperature>
-      <lighting photophilous="Да"/>
+      <lighting lighting="Да"/>
       <watering>210</watering>
     </growingTips>
     <multiplying>Черенки</multiplying>

@@ -1,4 +1,4 @@
-package com.golubovich.xml.parsers.saxparser;
+package com.golubovich.xml.parsers.sax;
 
 import static com.golubovich.xml.utils.Constants.*;
 

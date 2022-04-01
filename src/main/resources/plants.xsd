@@ -28,23 +28,15 @@
                 </xsd:simpleType>
               </xsd:element>
 
-              <xsd:element name="origin">
-                <xsd:complexType>
-                  <xsd:sequence>
-
-                    <xsd:element name="country">
-                      <xsd:simpleType>
-                        <xsd:restriction base="xsd:string">
-                          <xsd:pattern value="([A-Za-zА-Яа-я]+[ -]?)+"/>
-                        </xsd:restriction>
-                      </xsd:simpleType>
-                    </xsd:element>
-
-                    <xsd:element name="importDate" type="xsd:date"/>
-
-                  </xsd:sequence>
-                </xsd:complexType>
+              <xsd:element name="country">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="([A-Za-zА-Яа-я]+[ -]?)+"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
               </xsd:element>
+
+              <xsd:element name="importDate" type="xsd:date"/>
 
               <xsd:choice>
                 <!-- Растение без цветов -->
@@ -80,7 +72,7 @@
 
                     <xsd:element name="lighting">
                       <xsd:complexType>
-                        <xsd:attribute name="photophilous" use="optional" default="-">
+                        <xsd:attribute name="lighting" use="optional" default="-">
                           <xsd:simpleType>
                             <xsd:restriction>
                               <xsd:pattern value="Да|Нет|-"/>

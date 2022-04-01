@@ -56,8 +56,7 @@ public class StAXParser {
 
       if (xmlEvent.isStartElement()) {
         startElement(xmlEvent, reader);
-      }
-      else if (xmlEvent.isEndElement()) {
+      } else if (xmlEvent.isEndElement()) {
         endElement(xmlEvent);
       }
     }
@@ -181,7 +180,7 @@ public class StAXParser {
   private void startLightningTag(StartElement startElement) {
     Attribute photophilousAttr = startElement.getAttributeByName(new QName(ATTR_PHOTOPHILOUS));
     if (photophilousAttr != null) {
-      growingTips.setPhotophilous(YES.equals(photophilousAttr.getValue()));
+      growingTips.setLighting(YES.equals(photophilousAttr.getValue()));
     }
   }
 

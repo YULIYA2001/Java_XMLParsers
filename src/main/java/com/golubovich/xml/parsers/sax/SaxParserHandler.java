@@ -1,4 +1,4 @@
-package com.golubovich.xml.parsers.saxparser;
+package com.golubovich.xml.parsers.sax;
 
 import static com.golubovich.xml.utils.Constants.*;
 
@@ -57,8 +57,6 @@ public class SaxParserHandler extends DefaultHandler {
           ));
         }
 
-        case TAG_ORIGIN -> isOrigin = true;
-
         case TAG_VISUAL_PARAMS -> {
           isVisualParams = true;
           visualParams = new VisualParameters();
@@ -75,7 +73,7 @@ public class SaxParserHandler extends DefaultHandler {
           growingTips = new GrowingTips();
         }
 
-        case TAG_LIGHTNING -> growingTips.setPhotophilous(
+        case TAG_LIGHTNING -> growingTips.setLighting(
             YES.equals(attributes.getValue(0))
         );
       }
@@ -90,8 +88,6 @@ public class SaxParserHandler extends DefaultHandler {
         flowersList.add(flower);
         isFlower = false;
       }
-
-      case TAG_ORIGIN -> isOrigin = false;
 
       case TAG_VISUAL_PARAMS -> {
         isVisualParams = false;
@@ -125,22 +121,17 @@ public class SaxParserHandler extends DefaultHandler {
         case TAG_SOIL -> flower.setSoil(
             parseEnums.parseSoil(new String(ch, start, length))
         );
+        case TAG_COUNTRY -> flower.setCountry(new String(ch, start, length));
+        case TAG_IMPORT_DATE -> flower.setImportDate(LocalDate.parse(
+            new String(ch, start, length),
+            DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        ));
         case TAG_MULTIPLYING -> flower.setMultiplying(
             parseEnums.parseMultiplying(new String(ch, start, length))
         );
       }
 
-      if (isOrigin) {
-        switch (currentTagName) {
-          case TAG_COUNTRY -> flower.setCountry(new String(ch, start, length));
-          case TAG_IMPORT_DATE -> flower.setImportDate(
-              LocalDate.parse(
-                  new String(ch, start, length),
-                  DateTimeFormatter.ofPattern("yyyy-MM-dd")
-              )
-          );
-        }
-      } else if (isGrowingTips) {
+      if (isGrowingTips) {
         switch (currentTagName) {
           case TAG_TEMPERATURE -> growingTips.setTemperature(
               Integer.parseInt(new String(ch, start, length))

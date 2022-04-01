@@ -22,7 +22,7 @@
 
     <growingTips>
       <temperature>17</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>500</watering>
     </growingTips>
 
@@ -43,7 +43,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>18</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>210</watering>
     </growingTips>
     <multiplying>Семена</multiplying>
@@ -62,7 +62,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>21</temperature>
-      <lighting lighting="Нет"/>
+      <lighting photophilous="Нет"/>
       <watering>200</watering>
     </growingTips>
     <multiplying>Черенки Семена</multiplying>
@@ -81,7 +81,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>15</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>190</watering>
     </growingTips>
     <multiplying>Черенки</multiplying>
@@ -100,7 +100,7 @@
     </extendedVisualParameters>
     <growingTips>
       <temperature>24</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>100</watering>
     </growingTips>
     <multiplying>Листья Семена</multiplying>
@@ -118,7 +118,7 @@
     </visualParameters>
     <growingTips>
       <temperature>19</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>510</watering>
     </growingTips>
     <multiplying>Черенки</multiplying>
@@ -136,7 +136,7 @@
     </visualParameters>
     <growingTips>
       <temperature>25</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>50</watering>
     </growingTips>
     <multiplying>Семена</multiplying>
@@ -154,7 +154,7 @@
     </visualParameters>
     <growingTips>
       <temperature>18</temperature>
-      <lighting lighting="Да"/>
+      <lighting photophilous="Да"/>
       <watering>210</watering>
     </growingTips>
     <multiplying>Черенки</multiplying>

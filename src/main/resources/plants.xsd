@@ -72,10 +72,10 @@
 
                     <xsd:element name="lighting">
                       <xsd:complexType>
-                        <xsd:attribute name="lighting" use="optional" default="-">
+                        <xsd:attribute name="photophilous" use="optional" default="Да">
                           <xsd:simpleType>
                             <xsd:restriction>
-                              <xsd:pattern value="Да|Нет|-"/>
+                              <xsd:pattern value="Да|Нет"/>
                             </xsd:restriction>
                           </xsd:simpleType>
                         </xsd:attribute>

@@ -109,14 +109,6 @@ public class DOMParser {
           );
           break;
 
-//        case TAG_ORIGIN:
-//          NodeList origin = flowerNode.item(j).getChildNodes();
-//          flower.setCountry(origin.item(1).getTextContent());
-//          flower.setImportDate(LocalDate.parse(
-//              origin.item(3).getTextContent(),
-//              DateTimeFormatter.ofPattern("yyyy-MM-dd")
-//          ));
-//          break;
         case TAG_COUNTRY:
           flower.setCountry(flowerNode.item(j).getTextContent());
           break;

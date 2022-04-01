@@ -1,21 +1,55 @@
 package com.golubovich.xml.bean;
 
+import static com.golubovich.xml.utils.Constants.*;
+
 import com.golubovich.xml.bean.enums.Multiplying;
 import com.golubovich.xml.bean.enums.Soil;
+import com.golubovich.xml.parsers.jaxb.adapters.DateAdapter;
+import com.golubovich.xml.parsers.jaxb.adapters.IdAdapter;
+import com.golubovich.xml.parsers.jaxb.adapters.MultiplyingAdapter;
+import com.golubovich.xml.parsers.jaxb.adapters.SoilAdapter;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+
+@XmlRootElement(name = TAG_FLOWER)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Flower {
-  private int id;
+
+  @XmlAttribute(name = ATTR_ID)
+  @XmlJavaTypeAdapter(IdAdapter.class)
+  private Integer id;
+
+  @XmlElement(name = TAG_NAME)
   private String name;
+
+  @XmlElement(name = TAG_SOIL)
+  @XmlJavaTypeAdapter(SoilAdapter.class)
   private Soil soil;
+
+  @XmlElement(name = TAG_COUNTRY)
   private String country;
+
+  @XmlElement(name = TAG_IMPORT_DATE)
+  @XmlJavaTypeAdapter(DateAdapter.class)
   private LocalDate importDate;
+
+  @XmlElements({
+      @XmlElement(name = "visualParameters", type = VisualParameters.class),
+      @XmlElement(name = "extendedVisualParameters", type = ExtendedVisualParameters.class)
+  })
   private VisualParameters visualParameters;
+
+  @XmlElement(name = TAG_GROWING_TIPS)
   private GrowingTips growingTips;
+
+  @XmlJavaTypeAdapter(MultiplyingAdapter.class)
   private ArrayList<Multiplying> multiplying;
 
-  public Flower() {}
+  public Flower() {
+  }
 
   public Flower(int id, String name, Soil soil, String country, LocalDate importDate,
       VisualParameters visualParameters, GrowingTips growingTips,
@@ -97,9 +131,10 @@ public class Flower {
   @Override
   public String toString() {
 
-    ArrayList<String> _multiplying = new ArrayList<>();
-    for (Multiplying _mlt: multiplying)
-      _multiplying.add(_mlt.getName());
+    ArrayList<String> str_multiplying = new ArrayList<>();
+    for (Multiplying _mlt : multiplying) {
+      str_multiplying.add(_mlt.getName());
+    }
 
     return "Flower{ " +
         "id=" + id +
@@ -109,7 +144,7 @@ public class Flower {
         ", importDate=" + importDate +
         ", visualParameters=" + visualParameters +
         ", growingTips=" + growingTips +
-        ", multiplying=" + _multiplying +
+        ", multiplying=" + str_multiplying +
         " }";
   }
 }

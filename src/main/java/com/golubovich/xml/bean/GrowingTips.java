@@ -1,15 +1,39 @@
 package com.golubovich.xml.bean;
 
+import static com.golubovich.xml.utils.Constants.TAG_GROWING_TIPS;
+import static com.golubovich.xml.utils.Constants.TAG_LIGHTNING;
+import static com.golubovich.xml.utils.Constants.TAG_TEMPERATURE;
+import static com.golubovich.xml.utils.Constants.TAG_WATERING;
+
+import com.golubovich.xml.parsers.jaxb.adapters.LightingAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+@XmlRootElement(name = TAG_GROWING_TIPS)
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {TAG_TEMPERATURE, TAG_LIGHTNING, TAG_WATERING})
 public class GrowingTips {
+
+  @XmlElement(name = TAG_TEMPERATURE)
   private int temperature;
-  private boolean photophilous;
+
+  @XmlElement(name = TAG_LIGHTNING)
+  @XmlJavaTypeAdapter(LightingAdapter.class)
+  private Boolean lighting;
+
+  @XmlElement(name = TAG_WATERING)
   private int watering;
 
-  public GrowingTips() {}
+  public GrowingTips() {
+  }
 
-  public GrowingTips(int temperature, boolean photophilous, int watering) {
+  public GrowingTips(int temperature, boolean lighting, int watering) {
     this.temperature = temperature;
-    this.photophilous = photophilous;
+    this.lighting = lighting;
     this.watering = watering;
   }
 
@@ -17,8 +41,8 @@ public class GrowingTips {
     return temperature;
   }
 
-  public boolean isPhotophilous() {
-    return photophilous;
+  public boolean isLighting() {
+    return lighting;
   }
 
   public int getWatering() {
@@ -29,8 +53,8 @@ public class GrowingTips {
     this.temperature = temperature;
   }
 
-  public void setPhotophilous(boolean photophilous) {
-    this.photophilous = photophilous;
+  public void setLighting(boolean lighting) {
+    this.lighting = lighting;
   }
 
   public void setWatering(int watering) {
@@ -39,9 +63,9 @@ public class GrowingTips {
 
   @Override
   public String toString() {
-    return "GrowingTips{" +
+    return "GrowingTips1{" +
         "temperature=" + temperature +
-        ", photophilous=" + photophilous +
+        ", lighting=" + lighting +
         ", watering=" + watering +
         '}';
   }

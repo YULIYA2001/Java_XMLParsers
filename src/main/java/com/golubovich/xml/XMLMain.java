@@ -1,9 +1,11 @@
 package com.golubovich.xml;
 
+
 import com.golubovich.xml.bean.Flower;
 import com.golubovich.xml.parsers.DOMParser;
 import com.golubovich.xml.parsers.StAXParser;
-import com.golubovich.xml.parsers.saxparser.SAXMyParser;
+import com.golubovich.xml.parsers.jaxb.JAXBParser;
+import com.golubovich.xml.parsers.sax.SAXMyParser;
 import com.golubovich.xml.utils.MyException;
 import java.util.List;
 import java.util.Scanner;
@@ -61,13 +63,13 @@ public class XMLMain {
           break;
 
         case JAXB:
-//          JAXBParser jaxbParser = new JAXBParser();
-//          try {
-//            flowersList = jaxbParser.parse();
-//          } catch (MyException e) {
-//            logger.error(e.getMessage());
-//            return;
-//          }
+          JAXBParser jaxbParser = new JAXBParser();
+          try {
+            flowersList = jaxbParser.parse();
+          } catch (MyException e) {
+            logger.error(e.getMessage());
+            return;
+          }
           break;
 
         case EXIT:
@@ -81,7 +83,7 @@ public class XMLMain {
           logger.info(flower);
         }
       }
-
     }
+
   }
 }

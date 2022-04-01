@@ -1,10 +1,11 @@
 package com.golubovich.xml.utils;
 
 public class Constants {
+
+  public static final String TAG_FLOWERS = "flowers";
   public static final String TAG_FLOWER = "flower";
   public static final String TAG_NAME = "name";
   public static final String TAG_SOIL = "soil";
-  public static final String TAG_ORIGIN = "origin";
   public static final String TAG_COUNTRY = "country";
   public static final String TAG_IMPORT_DATE = "importDate";
   public static final String TAG_EXTENDED_VISUAL_PARAMS = "extendedVisualParameters";

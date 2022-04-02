@@ -2,6 +2,12 @@ package com.golubovich.xml;
 
 
 import com.golubovich.xml.bean.Flower;
+import com.golubovich.xml.builder.Builder;
+import com.golubovich.xml.builder.Director;
+import com.golubovich.xml.builder.DOMParserBuilder;
+import com.golubovich.xml.builder.JAXBParserBuilder;
+import com.golubovich.xml.builder.SAXParserBuilder;
+import com.golubovich.xml.builder.StAXParserBuilder;
 import com.golubovich.xml.parsers.DOMParser;
 import com.golubovich.xml.parsers.StAXParser;
 import com.golubovich.xml.parsers.jaxb.JAXBParser;
@@ -24,6 +30,49 @@ public class XMLMain {
     final String JAXB = "4";
     final String EXIT = "0";
 
+
+    // wrong builder
+    do {
+      Director director = new Director();
+      Builder builder;
+      List<Flower> flowers;
+
+      try {
+
+        builder = new DOMParserBuilder();
+        director.constructDOMParser(builder);
+        DOMParser domParser = ((DOMParserBuilder) builder).getResult();
+        flowers = domParser.parse();
+        print(flowers);
+
+        builder = new SAXParserBuilder();
+        director.constructSAXParser(builder);
+        SAXMyParser saxParser = ((SAXParserBuilder) builder).getResult();
+        flowers = saxParser.parse();
+        print(flowers);
+
+        builder = new StAXParserBuilder();
+        director.constructStAXParser(builder);
+        StAXParser staxParser = ((StAXParserBuilder) builder).getResult();
+        flowers = staxParser.parse();
+        print(flowers);
+
+        builder = new JAXBParserBuilder();
+        director.constructJAXBParser(builder);
+        JAXBParser jaxbParser = ((JAXBParserBuilder) builder).getResult();
+        flowers = jaxbParser.parse();
+        print(flowers);
+
+      } catch (MyException e) {
+        logger.error(e.getMessage());
+      }
+
+    } while (false);
+
+
+
+
+    // Standard Menu
     Scanner in = new Scanner(System.in);
     System.out.println("\t Выберите вид парсера\n-------------------------");
 
@@ -84,6 +133,14 @@ public class XMLMain {
         }
       }
     }
+  }
 
+  private static void print(List<Flower> flowersList) {
+    if (flowersList != null) {
+      for (Flower flower : flowersList) {
+        System.out.println(flower);
+      }
+      System.out.println();
+    }
   }
 }

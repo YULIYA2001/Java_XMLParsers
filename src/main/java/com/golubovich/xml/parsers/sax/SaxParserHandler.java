@@ -27,7 +27,6 @@ public class SaxParserHandler extends DefaultHandler {
   private VisualParameters visualParams;
 
   private boolean isFlower = false;
-  private boolean isOrigin = false;
   private boolean isVisualParams = false;
   private boolean isExtendedVisualParams = false;
   private boolean isGrowingTips = false;

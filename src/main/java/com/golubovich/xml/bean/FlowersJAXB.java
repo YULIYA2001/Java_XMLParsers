@@ -4,6 +4,7 @@ import static com.golubovich.xml.utils.Constants.TAG_FLOWER;
 import static com.golubovich.xml.utils.Constants.TAG_FLOWERS;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.xml.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class FlowersJAXB {
   private List<Flower> flowersList = new ArrayList<>();
 
   public List<Flower> getFlowersList() {
-    return flowersList;
+    return Collections.unmodifiableList(flowersList);
   }
 
   public void setFlowersList(List<Flower> flowersList) {
